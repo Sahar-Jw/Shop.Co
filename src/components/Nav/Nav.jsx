@@ -38,7 +38,6 @@ useEffect(() => {
   return () => window.removeEventListener('resize', handleResize);
 }, []);
 
-console.log('Nav render - isMobileOpen:', isMobileOpen, 'showCategories:', showCategories);
 
 const filteredProducts = products.filter(product =>
   product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -103,7 +102,7 @@ return (
             </h1>
         </NavLink>
         
-        <div className="hidden md:flex flex-1 lg:justify-center gap-8 mx-4 lg:mx-8">
+        <div className="hidden xl:flex flex-1 lg:justify-center gap-8 mx-4 lg:mx-8">
           <ul className="flex gap-5 items-center">
             <li className="text-[14px] font-light">
                 <NavLink to={'/'}>
@@ -147,7 +146,7 @@ return (
             </li>
           </ul>
         </div>
-        <div className="relative hidden md:block">
+        <div className="relative hidden xl:block">
           <input 
             ref={searchTrigger}
             className="bg-gray w-100 p-2 px-4 text-[#7b7b7b] rounded-full pr-10" 
@@ -180,14 +179,14 @@ return (
           )}
         </div>
         <div className="flex items-center gap-5">
-                <button ref={hamburgerRef} className="lg:hidden text-3xl cursor-pointer p-1" onClick={(e) => {
+                <button ref={hamburgerRef} className="xl:hidden text-3xl cursor-pointer p-1" onClick={(e) => {
                         e.stopPropagation();
                         console.log('Hamburger clicked, setting isMobileOpen to true');
                         setIsMobileOpen(true);
                     }}>
                         <IoMenu />  
                 </button>
-                <NavLink to={'/cart'}  className="hidden md:block">
+                <NavLink to={'/cart'}  className="hidden xl:block">
                     <button className="cursor-pointer text-[24px] relative">
                         <RiShoppingCart2Line />
                         {totalItems > 0 && (
@@ -198,7 +197,7 @@ return (
                     </button>
                 </NavLink>
 {isLoggedIn ? (
-                    <div className="relative hidden lg:block">
+                    <div className="relative hidden xl:block">
                         <button className=" text-[14px] font-semibold pr-4 flex items-center gap-2">
                             <IoPersonCircleOutline />
                             Hi, {username}
@@ -211,7 +210,7 @@ return (
                         </button>
                     </div>
                 ) : (
-                    <div className="hidden lg:flex items-center gap-4">
+                    <div className="hidden xl:flex items-center gap-4">
                         <NavLink to={'/signin'}>
                             <button className="cursor-pointer font-semibold text-[16px]">
                                 signin
