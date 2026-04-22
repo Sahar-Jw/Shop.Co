@@ -22,11 +22,11 @@ export default function Footer() {
                         }
                     </div>
                 </div>
-                <div className="mb-10 lg:mb-0">
-                    <h1 className="text-[18px] font-semibold " style={{ letterSpacing: '3px' }}>
+                <div className="mb-5 lg:mb-0">
+                    <h1 className="text-[16px] font-semibold " style={{ letterSpacing: '3px' }}>
                         COMPANY
                     </h1>
-                    <ul className="mt-4 flex flex-col gap-2 text-[14px] font-light">
+                    <ul className="mt-2 flex flex-col gap-1 text-[14px] font-light">
                         <a href="#" className="w-max">
                             <li className="cursor-pointer text-[#595959] hover:text-black transition-all duration-300">
                                 About
@@ -49,11 +49,11 @@ export default function Footer() {
                         </a>
                     </ul>
                 </div>
-                <div className="mb-10 lg:mb-0">
-                    <h1 className="text-[18px] font-semibold " style={{ letterSpacing: '3px' }}>
+                <div className="mb-5 lg:mb-0">
+                    <h1 className="text-[16px] font-semibold " style={{ letterSpacing: '3px' }}>
                         HELP
                     </h1>
-                    <ul className="mt-4 flex flex-col gap-2 text-[14px] font-light">
+                    <ul className="mt-2 flex flex-col gap-1 text-[14px] font-light">
                         <a href="#" className="w-max">
                             <li className="cursor-pointer text-[#595959] hover:text-black transition-all duration-300">
                                 Customer Support
@@ -76,11 +76,11 @@ export default function Footer() {
                         </a>
                     </ul>
                 </div>
-                <div className="mb-10 lg:mb-0">
-                    <h1 className="text-[18px] font-semibold " style={{ letterSpacing: '3px' }}>
+                <div className="mb-5 lg:mb-0">
+                    <h1 className="text-[16px] font-semibold " style={{ letterSpacing: '3px' }}>
                         FAQ
                     </h1>
-                    <ul className="mt-4 flex flex-col gap-2 text-[14px] font-light">
+                    <ul className="mt-2 flex flex-col gap-1 text-[14px] font-light">
                         <a href="#" className="w-max">
                             <li className="cursor-pointer text-[#595959] hover:text-black transition-all duration-300">
                                 Account
@@ -104,10 +104,10 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className="">
-                    <h1 className="text-[18px] font-semibold " style={{ letterSpacing: '3px' }}>
+                    <h1 className="text-[16px] font-semibold " style={{ letterSpacing: '3px' }}>
                         RESOURCES
                     </h1>
-                    <ul className="mt-4 flex flex-col gap-2 text-[14px] font-light">
+                    <ul className="mt-2 flex flex-col gap-1 text-[14px] font-light">
                         <a href="#" className="w-max">
                             <li className="cursor-pointer text-[#595959] hover:text-black transition-all duration-300">
                                 Free eBooks
