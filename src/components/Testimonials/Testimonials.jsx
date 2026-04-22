@@ -19,7 +19,7 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <div className="lg:max-w-6xl w-full mx-auto px-4 lg:py-12 relative">
+    <div className="lg:max-w-6xl w-full mx-auto sm:px-4 xs:px-0 lg:py-12 relative">
 
       <div className="swiper-wrapper-relative"> {/* Wrapper for positioning */}
         <Swiper
@@ -51,7 +51,7 @@ export default function Testimonials() {
         >
 
           {reviews.map((review, i) => (
-            <SwiperSlide key={i} className=" py-6 px-4">
+            <SwiperSlide key={i} className=" py-6 sm:px-4 px-0">
               <div className="bg-white/80 shadow-lg p-8 rounded-2xl  border border-gray h-fit min-h-62.5 flex flex-col ">
 
                 <div>
@@ -79,7 +79,7 @@ export default function Testimonials() {
 
         </Swiper>
       </div>
-          <div className="absolute  lg:left-143 lg:top-100 top-81.5 left-48.75">
+          <div className="absolute  lg:left-143 lg:top-100 sm:top-81.5 sm:left-48.75 md:left-85.75 top-94.5 left-30.75 ">
       <button className="custom-next text-white bg-black absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12  rounded-full shadow-2xl  hover:scale-110 hover:rotate-12 transition-all duration-300 flex items-center justify-center lg:text-xl text-[14px] font-bold border-2 border-white/30 backdrop-blur-sm" aria-label="Previous slide">
         <MdOutlineKeyboardArrowRight />
       </button>

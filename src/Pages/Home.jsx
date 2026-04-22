@@ -65,12 +65,12 @@ export default function Home() {
             info={info}
             />
             <Section style={'lg:px-17.5 px-10 bg-black py-[24px]'}>
-                <div className=" flex justify-between ">
-                    <img className='lg:h-6.75 h-2.5' src="/assets/img/versace.png" alt="versace" />
-                    <img className='lg:h-6.75 h-2.5' src="/assets/img/zara.png" alt="zara" />
-                    <img className='lg:h-6.75 h-2.5' src="/assets/img/gucci.png" alt="gucci" />
-                    <img className='lg:h-6.75 h-2.5' src="/assets/img/prada.png" alt="prada" />
-                    <img className='lg:h-6.75 h-2.5' src="/assets/img/calvinKlin.png" alt="calvinKlin" />
+                <div className=" flex justify-between sm:gap-2 ">
+                    <img className='lg:h-6.75 sm:h-2.5 h-2 ' src="/assets/img/versace.png" alt="versace" />
+                    <img className='lg:h-6.75 sm:h-2.5 h-2 ' src="/assets/img/zara.png" alt="zara" />
+                    <img className='lg:h-6.75 sm:h-2.5 h-2 ' src="/assets/img/gucci.png" alt="gucci" />
+                    <img className='lg:h-6.75 sm:h-2.5 h-2 ' src="/assets/img/prada.png" alt="prada" />
+                    <img className='lg:h-6.75 sm:h-2.5 h-2 ' src="/assets/img/calvinKlin.png" alt="calvinKlin" />
                 </div>
                 
             </Section>
@@ -80,7 +80,7 @@ export default function Home() {
                   <SkeletonGrid count={8} className='mb-12' />
                 ) : (
                   <>
-                    <div className='mb-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
+                    <div className='mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
                       {firstEightproducts.map((pro) => (
                         <Card link={pro} key={pro.id}/>
                       ))}
@@ -97,7 +97,7 @@ export default function Home() {
                   <SkeletonGrid count={4} className='mb-12' />
                 ) : (
                   <>
-                    <div className='mb-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
+                    <div className='mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
                       {topRated.map((top) => (
                         <Card link={top} key={top.id}/>
                       ))}
@@ -114,7 +114,7 @@ export default function Home() {
                   <SkeletonGrid count={4} className='mb-12' />
                 ) : (
                   <>
-                    <div className='mb-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
+                    <div className='mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
                       {topSelling.map((top) => (
                         <Card link={top} key={top.id}/>
                       ))}

@@ -8,4 +8,5 @@
   --color-gray:#F0F0F0;
   --font-title: "Sekuy", sans-serif; 
   --font-subTitle: "Roboto", sans-serif; 
+  --breakpoint-xs: 30rem;
 }

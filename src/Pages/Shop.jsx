@@ -96,7 +96,7 @@ export default function Shop() {
 
           <div className="flex-1">
             {loading ? (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 pt-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 pt-12">
                 <SkeletonGrid count={12} />
               </div>
             ) : filteredProducts.length === 0 ? (
@@ -104,7 +104,7 @@ export default function Shop() {
                 <p className="text-xl text-gray-500">No products found matching your filters.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
                 {filteredProducts.map((pro) => (
                   <Card key={pro.id} link={pro} />
                 ))}
