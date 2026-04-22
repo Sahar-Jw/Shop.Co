@@ -138,12 +138,6 @@ return (
                     About Us
                 </NavLink>
             </li>
-            <li className="text-[14px] font-light">
-                <NavLink to={'/contact'}>
-                    Contact Us
-                </NavLink>
-
-            </li>
           </ul>
         </div>
         <div className="relative hidden xl:block">

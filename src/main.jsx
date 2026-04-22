@@ -11,7 +11,6 @@ import SignIn from './Pages/SignIn'
 import SignUp from './Pages/SignUp'
 import Shop from './Pages/Shop'
 import About from './Pages/About'
-import Contact from './Pages/Contact'
 
 const router = createBrowserRouter([
   {
@@ -49,10 +48,6 @@ const router = createBrowserRouter([
       {
         path:'/about',
         element:<About />
-      },
-      {
-        path:'/contact',
-        element:<Contact />
       },
     ]
   }
