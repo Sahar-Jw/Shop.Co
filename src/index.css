@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Sekuya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-black:#000;
+  --color-white:#fff;
+  --color-gray:#F0F0F0;
+  --font-title: "Sekuy", sans-serif; 
+  --font-subTitle: "Roboto", sans-serif; 
+}
