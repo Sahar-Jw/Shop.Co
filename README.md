@@ -2,7 +2,7 @@
 ## Shop.Co - Modern E-Commerce Clothing Store
 
 ### Overview
-Shop.Co is a fully responsive e-commerce website built for browsing, shopping, and purchasing clothing items from international brands like Versace, Zara, Gucci, Prada, and more. It features a modern, user-friendly interface with product catalogs, filtering, shopping cart functionality, user authentication, and multi-language support. Data is fetched from the [Fake Store API](https://fakestoreapi.com/) for products and categories, making it ideal for demos or portfolio projects.
+Shop.Co is a fully responsive e-commerce website built for browsing, shopping, and purchasing clothing items from international brands like Versace, Zara, Gucci, Prada, and more. It features a modern, user-friendly interface with product catalogs, filtering, shopping cart functionality, user authentication, Data is fetched from the [Fake Store API](https://fakestoreapi.com/) for products and categories, making it ideal for demos or portfolio projects.
 
 ### Key Features
 - **Product Browsing**: Home page showcases New Arrivals, Top Rated, and Top Selling products with skeleton loading states.
