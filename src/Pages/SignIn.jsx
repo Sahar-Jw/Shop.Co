@@ -89,9 +89,9 @@ export default function SignIn() {
         </form>
         <p className='text-center mt-6 text-sm'>
           Don't have an account? {' '}
-          <a href='/signup' className='text-black underline font-semibold'>
+          <Link to='/signup' className='text-black underline font-semibold'>
             Sign Up
-          </a>
+          </Link>
         </p>
       </div>
     </div>

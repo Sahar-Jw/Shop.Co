@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -82,9 +82,9 @@ export default function SignUp() {
         </form>
         <p className='text-center mt-6 text-sm'>
           Have an account? {' '}
-          <a href='/signin' className='text-black underline font-semibold'>
+          <Link to='/signin' className='text-black underline font-semibold'>
             Sign In
-          </a>
+          </Link>
         </p>
       </div>
     </div>
