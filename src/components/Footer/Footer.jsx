@@ -3,7 +3,7 @@ import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 export default function Footer() {
     const linkIcons = [<FaTwitter />, <FaFacebookF />, <FaInstagram />, <FaGithub />];
     return (
-        <footer className="lg:px-17.5 px-10 py-10 bg-gray">
+        <footer className="lg:px-17.5 px-10 py-10 bg-gray mt-4">
             <div className="flex flex-col lg:flex-row justify-between border-b border-[#c7c5c5] pb-10 mb-10">
                 <div className="lg:w-1/4 w-full mb-10 lg:mb-0">
                     <h1 className="lg:text-[34px] text-[24px] font-bold">

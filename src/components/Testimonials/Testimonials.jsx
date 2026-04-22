@@ -79,7 +79,7 @@ export default function Testimonials() {
 
         </Swiper>
       </div>
-          <div className="absolute  lg:left-143 lg:top-100 sm:top-81.5 sm:left-48.75 md:left-85.75 top-94.5 left-30.75 ">
+          <div className="absolute lg:top-100 sm:top-81.5 top-94.5 left-[50%] translate-x-[-50%]">
       <button className="custom-next text-white bg-black absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12  rounded-full shadow-2xl  hover:scale-110 hover:rotate-12 transition-all duration-300 flex items-center justify-center lg:text-xl text-[14px] font-bold border-2 border-white/30 backdrop-blur-sm" aria-label="Previous slide">
         <MdOutlineKeyboardArrowRight />
       </button>
