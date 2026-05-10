@@ -15,7 +15,7 @@ export default function Hero({title,subTitle,info}) {
             <Link to={'/shop'}>
                 <MainBtn style={'lg:px-[24px] px-[14px] py-[8px] text-[13px] mb-4 lg:text-[14px]'} btn={'Shop Now'}/>
             </Link>
-            <div className="flex flex-wrap items-center gap-3 ">
+            <div className="flex gap-2 ">
                 {
                     info.map((i,index) => {
                         return(

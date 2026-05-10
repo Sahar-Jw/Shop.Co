@@ -19,11 +19,11 @@ function RootLayout() {
   return (
     <>
       {!isLoggedIn && showBanner && 
-        <div className='flex bg-black text-white p-2 justify-end lg:gap-116 md:gap-48 sm:gap-33 xs:gap-1 text-center'>
+        <div className='relative bg-black text-white p-2 text-center'>
           <p className='sm:text-[14px] text-[12px]'>Sign up and get 20% off to your first order. 
             <Link to={'/signup'} className='ml-1.5 underline'>Sign Up Now</Link>
           </p>
-          <button onClick={() => setShowBanner(false)} className='cursor-pointer'><IoClose /></button>
+          <button onClick={() => setShowBanner(false)} className='cursor-pointer absolute right-2 top-2.5'><IoClose /></button>
         </div>
       }
       <ProductsProvider>

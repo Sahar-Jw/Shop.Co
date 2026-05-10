@@ -72,11 +72,13 @@ const closeMobileMenu = () => setIsMobileOpen(false);
 
 useEffect(() => {
     const handleClickOutside = (e) => {
-        // Ignore hamburger, mobile menu, category triggers
+        // Ignore hamburger, mobile menu, category triggers, and search input/results
         if (hamburgerRef.current && hamburgerRef.current.contains(e.target)) return;
         if (mobileMenuRef.current && mobileMenuRef.current.contains(e.target)) return;
         if (categoryTrigger.current && categoryTrigger.current.contains(e.target)) return;
         if (mobileCategoryTrigger.current && mobileCategoryTrigger.current.contains(e.target)) return;
+        if (searchTrigger.current && searchTrigger.current.contains(e.target)) return;
+        if (searchList.current && searchList.current.contains(e.target)) return;
         
         console.log('Click outside - closing dropdowns/mobile');
         setShowCategories(false);
@@ -143,7 +145,7 @@ return (
         <div className="relative hidden xl:block">
           <input 
             ref={searchTrigger}
-            className="bg-gray w-100 p-2 px-4 text-[#7b7b7b] rounded-full pr-10" 
+            className="bg-gray w-100 p-2 px-4 text-[#7b7b7b] rounded-full pr-10 focus:outline-0" 
             type="text" 
             placeholder="Search for products..." 
             value={searchQuery}
@@ -151,7 +153,7 @@ return (
             onFocus={() => setShowSearchResults(true)}
           />
           {showSearchResults && searchQuery && filteredProducts.length > 0 && (
-            <div ref={searchList} className="absolute left-0 top-full z-999 bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.3)] rounded-xl py-2 w-80 max-h-96 overflow-y-auto border">
+            <div ref={searchList} className="absolute left-1  top-[110%] z-9999 bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.3)] rounded-xl py-2 w-80 max-h-96 overflow-y-auto ">
               {filteredProducts.map((product) => (
                 <Link
                   to={`/product/${product.id}`}
@@ -162,7 +164,7 @@ return (
                     setSearchQuery('');
                   }}
                 >
-                  <img src={product.image} alt={product.title} className="w-12 h-12 object-cover rounded shrink-0" />
+                  <img src={product.image} alt={product.title} className="w-12 h-12 object-contain rounded shrink-0 p-1" />
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-sm truncate">{product.title}</p>
                     <p className="text-xs text-gray-500">${product.price.toFixed(2)}</p>
@@ -219,8 +221,8 @@ return (
     </nav>
     {isMobileOpen && (
       <>
-        <div className="fixed inset-0 bg-black/50 z-9999 md:hidden" onClick={closeMobileMenu} />
-        <div ref={mobileMenuRef} className="fixed md:hidden top-0 right-0 h-full w-80 bg-[#fffffff7] shadow-[0px_0px_20px_rgba(0,0,0,0.3)] p-6 flex flex-col z-10000" style={{ transform: 'translateX(0)', transition: 'transform 0.3s ease-in-out' }}>
+        <div className="fixed  inset-0 bg-black/50 z-9999 md:hidden" onClick={closeMobileMenu} />
+        <div ref={mobileMenuRef} className="fixed md:hidden top-0 right-0 h-full overflow-scroll lg:w-80 w-55 bg-[#fffffff7] shadow-[0px_0px_20px_rgba(0,0,0,0.3)] p-6 flex flex-col z-10000" style={{ transform: 'translateX(0)', transition: 'transform 0.3s ease-in-out' }}>
           <div className="flex justify-between items-center mb-5">
             <h2 className="text-[18px] font-bold">{logo}</h2>
             <button onClick={closeMobileMenu} className="text-[20px] cursor-pointer">
@@ -229,7 +231,7 @@ return (
           </div>
           <div className="relative mb-4">
             <input 
-              className="w-full text-[14px] h-9 p-3 text-[#7b7b7b] rounded-full pr-10 border border-gray-300"
+              className="w-full text-[14px] h-9 p-3 text-[#7b7b7b] rounded-full pr-10 border border-gray-300 focus:outline-0"
               type="text" 
               placeholder="Search products..." 
               value={searchQuery}
@@ -249,7 +251,7 @@ return (
                       closeMobileMenu();
                     }}
                   >
-                    <img src={product.image} alt={product.title} className="w-12 h-12 object-cover rounded shrink-0" />
+                    <img src={product.image} alt={product.title} className="w-12 h-12 object-contain rounded shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-sm truncate">{product.title}</p>
                       <p className="text-xs text-gray-500">${product.price.toFixed(2)}</p>
@@ -291,7 +293,7 @@ return (
             </NavLink>
             {isLoggedIn ? (
               <>
-                <button onClick={handleLogout} className="p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all text-left">
+                <button onClick={handleLogout} className="p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all text-center">
                   Logout
                 </button>
               </>

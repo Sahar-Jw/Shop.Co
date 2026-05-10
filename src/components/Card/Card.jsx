@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 export default function Card({link}) {
     return (
         <Link to={`/product/${link.id}`}>
-        <div className='lg:w-70 w-40 rounded-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer'>
-            <img src={link.image} alt="" className='w-full mb-3 lg:h-70 h-40 bg-gray lg:p-15 p-6 rounded-2xl'/>
+        <div className='lg:w-70 w-full  rounded-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer'>
+            <img src={link.image} alt="" className=' w-full object-contain lg:object-fill mb-3 lg:h-60 h-50 bg-gray lg:p-15 py-8 px-12 lg:px-15 rounded-2xl'/>
             <div>
                 <h1 className='lg:text-[14px] text-[12px] font-bold mb-2'>
                     {link.title}

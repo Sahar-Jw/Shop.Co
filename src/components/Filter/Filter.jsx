@@ -3,6 +3,9 @@ import { useProducts } from '../../contexts/ProductsContext';
 
 export default function Filter({ categories = [], onClose }) {
   const { filters, setFilters } = useProducts();
+  const sliderMax = 500;
+  const currentMaxPrice = Number.isFinite(filters.maxPrice) ? filters.maxPrice : sliderMax;
+  const currentMinPrice = Math.min(filters.minPrice, currentMaxPrice);
 
   const toggleCategory = (category) => {
     setFilters(prev => ({
@@ -22,15 +25,15 @@ export default function Filter({ categories = [], onClose }) {
   };
 
   const handleMinPriceChange = (e) => {
-    const value = parseInt(e.target.value) || 0;
+    const value = parseInt(e.target.value, 10) || 0;
     setFilters(prev => ({
       ...prev,
-      minPrice: Math.min(value, prev.maxPrice)
+      minPrice: Math.min(value, currentMaxPrice)
     }));
   };
 
   const handleMaxPriceChange = (e) => {
-    const value = parseInt(e.target.value) || 0;
+    const value = parseInt(e.target.value, 10) || 0;
     setFilters(prev => ({
       ...prev,
       maxPrice: Math.max(value, prev.minPrice)
@@ -38,7 +41,7 @@ export default function Filter({ categories = [], onClose }) {
   };
 
   return (
-    <div className="bg-white lg:sticky lg:top-4 lg:p-6 p-4 lg:rounded-2xl lg:shadow-lg max-h-[70vh] overflow-y-auto h-full lg:h-auto">
+    <div className="bg-white lg:sticky lg:top-4 lg:p-6 p-4 lg:rounded-2xl lg:shadow-lg max-h-[70vh] lg:max-h-none overflow-y-auto lg:overflow-visible h-full lg:h-auto">
       {onClose ? (
         <div className="flex items-center justify-between mb-6 border-b pb-3 lg:mb-6">
           <h3 className="text-xl font-bold text-gray-800">Filters</h3>
@@ -61,25 +64,36 @@ export default function Filter({ categories = [], onClose }) {
       <div className="mb-8">
         <label className="block text-sm font-semibold text-black mb-2">Price Range</label>
         <div className="space-y-3">
-          <span className="block text-[15px] font-semibold text-gray-600">${filters.minPrice} - ${filters.maxPrice}</span>
-          <div className="relative h-2">
+          <span className="block text-[15px] font-semibold text-gray-600">${currentMinPrice} - ${currentMaxPrice}</span>
+          <div className="relative h-10">
+            <div className="absolute inset-0 flex items-center pointer-events-none">
+              <div className="h-2 w-full rounded-full bg-slate-200" />
+              <div
+                className="absolute h-2 rounded-full bg-slate-900"
+                style={{ left: `${(currentMinPrice / sliderMax) * 100}%`, right: `${100 - (currentMaxPrice / sliderMax) * 100}%` }}
+              />
+            </div>
+
             <input
               type="range"
               min="0"
-              max="500"
-              value={filters.minPrice}
+              max={sliderMax}
+              value={currentMinPrice}
               onChange={handleMinPriceChange}
-              className="absolute inset-0 w-full h-2 bg-gray-200 rounded-lg cursor-pointer accent-black hover:accent-gray-800 [&::-webkit-slider-thumb]:w-0 [&::-webkit-slider-thumb]:h-0 [&::-webkit-slider-thumb]:opacity-0 z-10"
+              className="absolute inset-0 w-full h-full bg-transparent range-slider-thumb z-10"
             />
             <input
               type="range"
               min="0"
-              max="500"
-              value={filters.maxPrice}
+              max={sliderMax}
+              value={currentMaxPrice}
               onChange={handleMaxPriceChange}
-              className="absolute inset-0 w-full h-2 bg-transparent rounded-lg cursor-pointer accent-black hover:accent-gray-800 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-md z-20"
+              className="absolute inset-0 w-full h-full bg-transparent range-slider-thumb z-20"
             />
-            <div className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-blue-200/50 to-transparent pointer-events-none z-0 rounded-lg" style={{left: `${(filters.minPrice / 500) * 100}%`, right: `${100 - (filters.maxPrice / 500) * 100}%`}}></div>
+          </div>
+          <div className="mt-3 flex justify-between text-sm text-gray-600">
+            <span>Min: ${currentMinPrice}</span>
+            <span>Max: ${currentMaxPrice}</span>
           </div>
         </div>
       </div>

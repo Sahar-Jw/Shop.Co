@@ -10,3 +10,36 @@
   --font-subTitle: "Roboto", sans-serif; 
   --breakpoint-xs: 30rem;
 }
+
+.range-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: none;
+  background: transparent;
+}
+
+.range-slider-thumb::-webkit-slider-runnable-track,
+.range-slider-thumb::-moz-range-track {
+  height: 100%;
+  background: transparent;
+  border: none;
+}
+
+.range-slider-thumb::-webkit-slider-thumb,
+.range-slider-thumb::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #111;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  pointer-events: auto;
+  margin-top: -3px;
+}
+
+.range-slider-thumb::-moz-range-thumb {
+  margin-top: 0;
+}

@@ -129,7 +129,7 @@ export default function Home() {
                 <h2 className='text-[18px] font-bold text-white mb-10'>
                     Shop By Category
                 </h2>
-                <div className="lg:flex grid grid-cols-2 lg:gap-2.5 justify-items-center gap-6 lg:flex-wrap">
+                <div className="lg:flex grid grid-cols-1 sm:grid-cols-2 lg:gap-2.5 justify-items-center gap-6 lg:flex-wrap">
                     {categories.map((cat) => {
                         return(
                             <div className=" w-max" key={cat.id}>
